@@ -1,0 +1,165 @@
+body, h1, p {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    overflow: hidden; /*disable scrolling by hiding overflow*/
+    background-color: white; /*change background color*/
+    font-family: Arial, sans-serif; /*fonts*/
+}
+
+main {  
+    padding: 20px;
+    text-align: center;
+    position: relative;
+}
+
+.menu-itemart-link {
+    font-family: 'CustomFont', sans-serif; /* Use your custom font */
+    color: #000000; /* Color for the links */
+    font-size: 120px; /* Font size for the links */
+    transform: rotate(-15deg);
+    text-decoration: none;
+    transition: color 0.3s;
+    position: absolute;
+    top: 240px;
+    left: 580px;
+}
+
+.menu-itemme-link {
+    font-family: 'CustomFont', sans-serif; /* Use your custom font */
+    color: #000000; /* Color for the links */
+    font-size: 120px; /* Font size for the links */
+    transform: rotate(0deg);
+    text-decoration: none;
+    transition: color 0.3s;
+    position: absolute;
+    top: 385px;
+    left: 610px;
+}
+
+.menu-itemcontact-link {
+    font-family: 'CustomFont', sans-serif; /* Use your custom font */
+    color: #000000; /* Color for the links */
+    font-size: 120px; /* Font size for the links */
+    transform: rotate(10deg);
+    text-decoration: none;
+    transition: color 0.3s;
+    position: absolute;
+    top: 530px;
+    left: 590px;
+}
+
+@font-face {
+    font-family: 'CustomFont';
+    src: url('Another_.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'IMPACT';
+    src: url('neuropol.otf') format('truetype');
+    /* You can specify other font properties here if needed */
+}
+
+/* CD image styles with spin animation */
+.logo img {
+    height: 1000px;
+    position: absolute;
+    left: -400px; /* Anchored to the left side of the viewport */
+    top: -40px; /* Adjust the top value as needed */
+    z-index: -1;
+    animation: spin 10s linear infinite; /* Adjust the duration (10s) as needed */
+}
+
+.menu-itemart-link:hover,
+.menu-itemme-link:hover,
+.menu-itemcontact-link:hover {
+    color: #e0e0e0; /* Change color on hover */
+}
+
+@keyframes spin {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+
+/* Footer styles */
+footer {
+    background-color: black;
+    color: white;
+    padding: 2px;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Barcode image styles */
+.footer-barcode img {
+    height: 55px;
+    margin-left: 10px; /* Change to margin-left to position it on the left side */
+    margin-top: 5px;
+}
+
+/* "aboodi23" text styles */
+.footer-aboodi {
+    color: white;
+    font-size: 35px;
+    font-family: 'IMPACT', sans-serif;
+    margin-right: 30px; /* Change to margin-right to position it on the right side */
+}
+
+@media screen and (max-width: 768px) {
+    .menu-itemart-link {
+        font-family: 'CustomFont', sans-serif; /* Use your custom font */
+        color: #000000; /* Color for the links */
+        font-size: 100px; /* Font size for the links */
+        transform: rotate(-20deg);
+        text-decoration: none;
+        transition: color 0.3s;
+        position: absolute;
+        top: 300px;
+        left: 185px;
+    }
+    
+    .menu-itemme-link {
+        font-family: 'CustomFont', sans-serif; /* Use your custom font */
+        color: #000000; /* Color for the links */
+        font-size: 100px; /* Font size for the links */
+        transform: rotate(0deg);
+        text-decoration: none;
+        transition: color 0.3s;
+        position: absolute;
+        top: 400px;
+        left: 210px;
+    }
+    
+    .menu-itemcontact-link {
+        font-family: 'CustomFont', sans-serif; /* Use your custom font */
+        color: #000000; /* Color for the links */
+        font-size: 100px; /* Font size for the links */
+        transform: rotate(15deg);
+        text-decoration: none;
+        transition: color 0.3s;
+        position: absolute;
+        top: 520px;
+        left: 180px;
+    }
+
+    
+    .logo img {
+        height: 900px;
+        position: absolute;
+        left: -387px; /* Anchored to the left side of the viewport */
+        top: 10px; /* Adjust the top value as needed */
+        z-index: -1;
+        animation: spin 10s linear infinite; /* Adjust the duration (10s) as needed */
+    }
+}
