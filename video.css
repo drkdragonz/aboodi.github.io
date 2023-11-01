@@ -1,12 +1,18 @@
 /* (A) MATERIAL ICONS */
 .material-icons {
-  font-size: 28px;
+  font-size: 40px;
   color: #fff;
+}
+
+@font-face {
+  font-family: 'CustomFont';
+  src: url('Another_.ttf') format('truetype');
 }
 
 /* (B) WRAPPER */
 #vWrap {
-  font-family: arial, sans-serif;
+  font-family: "CustomFont", sans-serif;
+  font-size: 25px;
   display: flex;
   flex-wrap: wrap;
   align-items: center;
@@ -33,7 +39,7 @@
 
 /* (E) TIME */
 #vCron {
-  font-size: 14px;
+  font-size: 20px;
   color: #cbcbcb;
   margin: 0 10px;
 }
@@ -109,10 +115,6 @@
   color: rgb(255, 204, 0);
 }
 
-@font-face {
-  font-family: 'CustomFont';
-  src: url('Another_.ttf') format('truetype');
-}
 
 /* (J) TITLE */
 #pageTitle {
@@ -125,4 +127,17 @@
   justify-content: center; /* Center horizontally */
   align-items: center; /* Center vertically */
   height: 100px; /* Set a fixed height for the title */
+}
+
+/* Media Query for Smaller Screens */
+@media (max-width: 768px) {
+  #vWrap {
+    padding: 8px; /* Reduce padding for smaller screens */
+  }
+
+  /* Adjust font size and padding for smaller screens */
+  #pageTitle {
+    font-size: 100px;
+    margin: 5px 0;
+  }
 }
