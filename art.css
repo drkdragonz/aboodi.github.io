@@ -31,7 +31,24 @@
       }
     }
   }
-  
+
+@font-face {
+  font-family: 'CustomFont';
+  src: url('Another_.ttf') format('truetype');
+}
+
+#pageTitle {
+  font-family: "CustomFont", sans-serif;
+  text-align: center;
+  font-size: 100px;
+  color: #000000;
+  margin: 50px 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100px;
+}
+
   .gallery__item {
     height: 0;
     position: relative;
@@ -200,7 +217,7 @@
   }
   
   body {
-    padding: 40px;
+    padding: 4px;
     background: #fbfbfb;
     color: #525252;
   }
@@ -214,6 +231,7 @@
     font-size: 4vw;
     margin-bottom: 10vh;
   }
+
   @media only screen and (min-width: 640px) {
     ul {
       font-size: 2vh;

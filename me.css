@@ -1,0 +1,25 @@
+body {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #ffffff; /* Optional background color */
+  }
+  
+  .centered-content {
+    max-width: 100%; /* Make sure the image scales to fit the screen width */
+    text-align: center;
+  }
+  
+  .centered-content img {
+    max-width: 100%; /* Ensure the image scales with the container */
+    height: auto; /* Maintain the image's aspect ratio */
+  }
+  
+  @font-face {
+    font-family: 'CustomFont';
+    src: url('Another_.ttf') format('truetype');
+
+}
