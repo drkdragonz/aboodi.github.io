@@ -18,7 +18,6 @@ window.addEventListener("DOMContentLoaded", () => {
     vVolume = document.getElementById("vVolume"),
     vVolIco = document.getElementById("vVolIco"),
     vList = document.getElementById("vList");
-  video.muted = true;
 
   // (A3) BUILD PLAYLIST
   for (let i in playlist) {
@@ -47,14 +46,7 @@ window.addEventListener("DOMContentLoaded", () => {
     }
   };
 
-  // (B3) AUTO START WHEN SUFFICIENTLY BUFFERED
-  video.addEventListener("canplay", () => {
-    video.play().catch(function() {
-      video.play(); // For handling iOS autoplay restriction
-    });
-  });
-
-  // (B4) AUTOPLAY NEXT VIDEO IN THE PLAYLIST
+  // (B3) AUTOPLAY NEXT VIDEO IN THE PLAYLIST
   video.addEventListener("ended", () => {
     vidNow++;
     if (vidNow >= playlist.length) {
@@ -63,7 +55,7 @@ window.addEventListener("DOMContentLoaded", () => {
     vidPlay(vidNow);
   });
 
-  // (B5) INIT SET FIRST VIDEO
+  // (B4) INIT SET FIRST VIDEO
   vidPlay(0);
 
   // (C1) AUTO SET PLAY/PAUSE TEXT
@@ -110,7 +102,6 @@ window.addEventListener("DOMContentLoaded", () => {
     vSeek.addEventListener("input", () => vSeeking = true); // prevents clash with (e3)
     vSeek.addEventListener("change", () => {
       video.currentTime = vSeek.value;
-      if (!video.paused) { video.play(); }
       vSeeking = false;
     });
 
