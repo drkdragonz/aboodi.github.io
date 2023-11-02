@@ -2,22 +2,22 @@ window.addEventListener("DOMContentLoaded", () => {
   // (A) PLAYER INIT
   // (A1) PLAYLIST - CHANGE TO YOUR OWN!
   let playlist = [
-    {name: "Heaven And Hell", src: "Videos/video1.mp4"},
-    {name: "What We Need", src: "Videos/video2.mp4"},
-    {name: "RAIN", src: "Videos/video3.mp4"},
-    {name: "believe.", src: "Videos/video4.mp4"}
+    { name: "Heaven And Hell", src: "Videos/video1.mp4" },
+    { name: "What We Need", src: "Videos/video2.mp4" },
+    { name: "RAIN", src: "Videos/video3.mp4" },
+    { name: "believe.", src: "Videos/video4.mp4" }
   ];
 
   // (A2) VIDEO PLAYER & GET HTML CONTROLS
   const video = document.getElementById("vVid"),
-        vPlay = document.getElementById("vPlay"),
-        vPlayIco = document.getElementById("vPlayIco"),
-        vNow = document.getElementById("vNow"),
-        vTime = document.getElementById("vTime"),
-        vSeek = document.getElementById("vSeek"),
-        vVolume = document.getElementById("vVolume"),
-        vVolIco = document.getElementById("vVolIco"),
-        vList = document.getElementById("vList");
+    vPlay = document.getElementById("vPlay"),
+    vPlayIco = document.getElementById("vPlayIco"),
+    vNow = document.getElementById("vNow"),
+    vTime = document.getElementById("vTime"),
+    vSeek = document.getElementById("vSeek"),
+    vVolume = document.getElementById("vVolume"),
+    vVolIco = document.getElementById("vVolIco"),
+    vList = document.getElementById("vList");
 
   // (A3) BUILD PLAYLIST
   for (let i in playlist) {
@@ -31,35 +31,39 @@ window.addEventListener("DOMContentLoaded", () => {
 
   // (B) PLAY MECHANISM
   // (B1) FLAGS
-  var vidNow = 0, // current video
-      vidStart = false, // auto start next video
+  var vidNow = 0; // current video
 
   // (B2) PLAY SELECTED VIDEO
   vidPlay = (idx, nostart) => {
     vidNow = idx;
-    vidStart = nostart ? false : true;
     video.src = encodeURI(playlist[idx]["src"]);
     for (let i in playlist) {
-      if (i == idx) { playlist[i]["row"].classList.add("now"); }
-      else { playlist[i]["row"].classList.remove("now"); }
+      if (i == idx) {
+        playlist[i]["row"].classList.add("now");
+      } else {
+        playlist[i]["row"].classList.remove("now");
+      }
     }
   };
 
   // (B3) AUTO START WHEN SUFFICIENTLY BUFFERED
-  video.addEventListener("canplay", () => { if (vidStart) {
-    video.play();
-    vidStart = false;
-  }});
+  video.addEventListener("canplay", () => {
+    video.play().catch(function() {
+      video.play(); // For handling iOS autoplay restriction
+    });
+  });
 
   // (B4) AUTOPLAY NEXT VIDEO IN THE PLAYLIST
   video.addEventListener("ended", () => {
     vidNow++;
-    if (vidNow >= playlist.length) { vidNow = 0; }
+    if (vidNow >= playlist.length) {
+      vidNow = 0;
+    }
     vidPlay(vidNow);
   });
 
   // (B5) INIT SET FIRST VIDEO
-  vidPlay(0, true);
+  vidPlay(0);
 
   // (C) PLAY/PAUSE BUTTON
   // (C1) AUTO SET PLAY/PAUSE TEXT
