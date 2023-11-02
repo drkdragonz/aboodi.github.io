@@ -1,25 +1,96 @@
+/* Updated CSS */
 body {
-    margin: 0;
-    padding: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
-    background-color: #ffffff; /* Optional background color */
-  }
-  
-  .centered-content {
-    max-width: 100%; /* Make sure the image scales to fit the screen width */
-    text-align: center;
-  }
-  
-  .centered-content img {
-    max-width: 100%; /* Ensure the image scales with the container */
-    height: auto; /* Maintain the image's aspect ratio */
-  }
-  
-  @font-face {
-    font-family: 'CustomFont';
-    src: url('Another_.ttf') format('truetype');
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column; /* Add flex-direction */
+  min-height: 100vh;
+  background-color: #ffffff; /* Optional background color */
+}
 
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0);
+  padding: 5px;
+  color: white;
+  font-size: 24px;
+  font-family: 'CustomFont', sans-serif;
+  margin-bottom: -15vw;
+}
+
+#menu-icon::before {
+  content: "\2630"; /* "Hamburger" icon */
+  font-size: 35px;
+  cursor: pointer;
+  color: rgb(0, 0, 0);
+  padding: 2px;
+}
+
+main {
+  flex: 1;
+}
+
+/* The rest of your existing CSS */
+.centered-content {
+  max-width: 100%;
+  text-align: center;
+}
+
+.centered-content img {
+  max-width: 100%;
+  height: auto;
+}
+
+@font-face {
+  font-family: 'CustomFont';
+  src: url('Another_.ttf') format('truetype');
+}
+
+.sidenav {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 2;
+  top: 0;
+  left: 0;
+  background-color: #000000;
+  overflow-x: hidden;
+  padding-top: 60px;
+  transition: 0.5s;
+}
+
+.sidenav a {
+  padding: 8px 8px 8px 32px;
+  text-decoration: none;
+  font-size: 45px;
+  font-family: 'CustomFont', sans-serif;
+  color: #ffffff;
+  display: block;
+  transition: 0.3s;
+}
+
+.sidenav a:hover {
+  color: rgb(245, 255, 170);
+}
+
+.sidenav .closebtn {
+  position: absolute;
+  top: 0;
+  right: 25px;
+  font-size: 60px;
+  margin-left: 50px;
+}
+
+#pageTitle {
+  font-family: "CustomFont", sans-serif;
+  text-align: center;
+  font-size: 100px;
+  color: #000000;
+  margin: 50px 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100px;
 }

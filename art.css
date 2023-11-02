@@ -242,3 +242,47 @@
     display: block;
     max-width: 100%;
   }
+
+  #menu-icon {
+    font-size: 35px; /* Adjust the size as needed */
+    cursor: pointer; /* Make the icon cursor clickable */
+    color: #000; /* Set the icon color */
+    position: absolute; /* Position the icon within the header */
+    top: 10px; /* Adjust the top position */
+    left: 10px; /* Adjust the left position */
+  }
+
+  .sidenav {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 2;
+  top: 0;
+  left: 0;
+  background-color: #000000;
+  overflow-x: hidden;
+  padding-top: 60px;
+  transition: 0.5s;
+}
+
+.sidenav a {
+  padding: 8px 8px 8px 32px;
+  text-decoration: none;
+  font-size: 45px;
+  font-family: 'CustomFont', sans-serif;
+  color: #ffffff;
+  display: block;
+  transition: 0.3s;
+}
+
+.sidenav a:hover {
+  color: rgb(245, 255, 170);
+}
+
+.sidenav .closebtn {
+  position: absolute;
+  top: 0;
+  right: 25px;
+  font-size: 60px;
+  margin-left: 50px;
+}

@@ -9,6 +9,19 @@
 
 </head>
 <body>
+  <header>
+    <span id="menu-icon" onclick="openNav()">&#9776;</span>
+  </header>
+
+  <div id="mySidenav" class="sidenav">
+    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+    <a href="index.html">Home</a>
+    <a href="art.html">Art</a>
+    <a href="video.html">Videos</a>
+    <a href="me.html">Me</a>
+    <a href="https://www.instagram.com/aboodispam/">Contact</a>
+  </div>
+
   <div id="pageTitle">Art</div>
 <!-- partial:index.partial.html -->
 <main class="wrapper">
@@ -89,7 +102,15 @@
   <ul>
   </ul>
 </main>
-<!-- partial -->
-  <script src='https://cdnjs.cloudflare.com/ajax/libs/lazysizes/4.0.1/lazysizes.min.js'></script>
+  <script>
+    function openNav() {
+      document.getElementById("mySidenav").style.width = "250px";
+    }
+
+    function closeNav() {
+      document.getElementById("mySidenav").style.width = "0";
+    }
+  </script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/lazysizes/4.0.1/lazysizes.min.js"></script>
 </body>
 </html>
