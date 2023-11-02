@@ -44,17 +44,11 @@ window.addEventListener("DOMContentLoaded", () => {
         playlist[i]["row"].classList.remove("now");
       }
     }
+    video.load(); // Load the video
+    vPlayIco.innerHTML = "play_arrow"; // Set the play icon to "play" when changing the video
   };
 
-  // (B3) AUTOPLAY NEXT VIDEO IN THE PLAYLIST
-  video.addEventListener("ended", () => {
-    vidNow++;
-    if (vidNow >= playlist.length) {
-      vidNow = 0;
-    }
-    vidPlay(vidNow);
-  });
-
+  
   // (B4) INIT SET FIRST VIDEO
   vidPlay(0);
 
@@ -64,8 +58,11 @@ window.addEventListener("DOMContentLoaded", () => {
 
   // (C2) CLICK TO PLAY/PAUSE
   vPlay.addEventListener("click", () => {
-    if (video.paused) { video.play(); }
-    else { video.pause(); }
+    if (video.paused) {
+      video.play();
+    } else {
+      video.pause();
+    }
   });
 
   // (D) TRACK PROGRESS
@@ -73,14 +70,16 @@ window.addEventListener("DOMContentLoaded", () => {
   var timeString = secs => {
     // (D1-1) HOURS, MINUTES, SECONDS
     let ss = Math.floor(secs),
-        hh = Math.floor(ss / 3600),
-        mm = Math.floor((ss - (hh * 3600)) / 60);
+      hh = Math.floor(ss / 3600),
+      mm = Math.floor((ss - (hh * 3600)) / 60);
     ss = ss - (hh * 3600) - (mm * 60);
 
     // (D1-2) RETURN FORMATTED TIME
-    if (hh>0) { mm = mm<10 ? "0"+mm : mm; }
-    ss = ss<10 ? "0"+ss : ss;
-    return hh>0 ? `${hh}:${mm}:${ss}` : `${mm}:${ss}` ;
+    if (hh > 0) {
+      mm = mm < 10 ? "0" + mm : mm;
+    }
+    ss = ss < 10 ? "0" + ss : ss;
+    return hh > 0 ? `${hh}:${mm}:${ss}` : `${mm}:${ss}`;
   };
 
   // (D2) INIT SET TRACK TIME
@@ -107,19 +106,21 @@ window.addEventListener("DOMContentLoaded", () => {
 
     // (E3) UPDATE SEEK BAR ON PLAYING
     video.addEventListener("timeupdate", () => {
-      if (!vSeeking) { vSeek.value = Math.floor(video.currentTime); }
+      if (!vSeeking) {
+        vSeek.value = Math.floor(video.currentTime);
+      }
     });
   });
 
   // (F) VOLUME
   vVolIco.addEventListener("click", () => {
-    video.volume = video.volume==0 ? 1 : 0 ;
+    video.volume = video.volume == 0 ? 1 : 0;
     vVolume.value = video.volume;
-    vVolIco.innerHTML = (vVolume.value==0 ? "volume_mute" : "volume_up");
+    vVolIco.innerHTML = vVolume.value == 0 ? "volume_mute" : "volume_up";
   });
   vVolume.addEventListener("change", () => {
     video.volume = vVolume.value;
-    vVolIco.innerHTML = (vVolume.value==0 ? "volume_mute" : "volume_up");
+    vVolIco.innerHTML = vVolume.value == 0 ? "volume_mute" : "volume_up";
   });
 
   // (G) ENABLE/DISABLE CONTROLS
