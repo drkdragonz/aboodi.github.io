@@ -1,9 +1,11 @@
+/* The rest of your existing CSS */
+
 /* Updated CSS */
 body {
   margin: 0;
   padding: 0;
   display: flex;
-  flex-direction: column; /* Add flex-direction */
+  flex-direction: column;
   min-height: 100vh;
   background-color: #ffffff; /* Optional background color */
 }
@@ -25,14 +27,13 @@ header {
   font-size: 35px;
   cursor: pointer;
   color: rgb(0, 0, 0);
-  padding: 2px;
+  padding: 5px;
 }
 
 main {
   flex: 1;
 }
 
-/* The rest of your existing CSS */
 .centered-content {
   max-width: 100%;
   text-align: center;
@@ -93,4 +94,25 @@ main {
   justify-content: center;
   align-items: center;
   height: 100px;
+}
+
+/* Large Laptops (e.g., 17-inch) and Desktops */
+@media (min-width: 1200px) {
+  #pageTitle {
+    font-family: "CustomFont", sans-serif;
+    text-align: center;
+    font-size: 100px;
+    color: #000000;
+    margin: 0px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 700px;
+  }
+
+  .centered-content {
+    max-width: 100%;
+    text-align: center;
+    margin-top: -250px; /* Adjust the margin as needed */
+  }
 }

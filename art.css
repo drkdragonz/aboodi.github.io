@@ -248,8 +248,7 @@
     cursor: pointer; /* Make the icon cursor clickable */
     color: #000; /* Set the icon color */
     position: absolute; /* Position the icon within the header */
-    top: 10px; /* Adjust the top position */
-    left: 10px; /* Adjust the left position */
+    padding: 5px;
   }
 
   .sidenav {
