@@ -18,6 +18,7 @@ window.addEventListener("DOMContentLoaded", () => {
     vVolume = document.getElementById("vVolume"),
     vVolIco = document.getElementById("vVolIco"),
     vList = document.getElementById("vList");
+  video.muted = true;
 
   // (A3) BUILD PLAYLIST
   for (let i in playlist) {
@@ -65,7 +66,6 @@ window.addEventListener("DOMContentLoaded", () => {
   // (B5) INIT SET FIRST VIDEO
   vidPlay(0);
 
-  // (C) PLAY/PAUSE BUTTON
   // (C1) AUTO SET PLAY/PAUSE TEXT
   video.addEventListener("play", () => vPlayIco.innerHTML = "pause");
   video.addEventListener("pause", () => vPlayIco.innerHTML = "play_arrow");
