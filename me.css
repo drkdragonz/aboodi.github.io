@@ -8,6 +8,7 @@ body {
   flex-direction: column;
   min-height: 100vh;
   background-color: #ffffff; /* Optional background color */
+  overflow-y: hidden;
 }
 
 header {
